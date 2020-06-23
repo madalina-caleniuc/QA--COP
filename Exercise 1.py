@@ -1,4 +1,6 @@
 
+# Part 2
+
 # exercise 1
 
 ice_cream = input("Enter your favourite ice cream flavour :")
