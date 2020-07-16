@@ -37,7 +37,7 @@ if value == "1":
 if value == "2":
     print(("Exit"))
 else:
-    print(input("Please enter '1'- exit' or '2'- continue :"))
+    print("Please run again and enter '1'- exit' or '2'- continue :")
 
 
 
