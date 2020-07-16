@@ -15,11 +15,13 @@ number = random.randint(1,9)
 guess = int(input("Enter a number : "))
 
 while guess != number:
-    guess = int(input("Try again : "))
+    try:
+        guess = int(input("Try again : "))
+    except ValueError:
+        print("It must be a number")
 
 else:
     print("Well guessed !! " )
-
 
 #ex 3 - print messages on the screen as long as a condition is met.
 print("Ex 3")
@@ -34,6 +36,8 @@ if value == "1":
         newnum += 1
 if value == "2":
     print(("Exit"))
+else:
+    print(input("Please enter '1'- exit' or '2'- continue :"))
 
 
 
