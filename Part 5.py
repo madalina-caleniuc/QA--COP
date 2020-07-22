@@ -1,20 +1,25 @@
 import random
 
 # ex 1 - list of random words
+print("Ex 1")
+print('\n')
 
 words = ["apple", "orange", "kiwi"]
 random.shuffle(words)
 print(words)
+
 print('\n')
 
 #ex 2
-# I didn't knew how to solve it
+print('Ex 2')
 
-
+list_a = [1,6,8,9,6.7,1.1]
+print(sum(list_a))
+print('\n')
 
 #ex 3 & 4- Who's your daddy ?
 #this isn't complete
-
+print('Ex 3&4')
 
 fathers_names = {"alex":"Jonny Bravo", "tom":"Aladin Aka", "chris":"unkown"}
 options = input("Choose an option: 0)Search son-father pair 1)Add son-father pair 2)Delete son-father pair 3) Replace son-father pair :")
