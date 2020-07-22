@@ -78,17 +78,19 @@ while max_try > 0:
 
 #- 2 x for loop -> crescator si descrescator
 #this is not complete
+print('\n')
 
 print("Ex 4")
 
-r = range(1,4)
+r = range(1,6)
+rv = range(1,5)
 
 for i in r:
     for j in range(i):
         print ('* ', end="")
     print('')
 
-for i in reversed(r):
+for i in reversed(rv):
     for j in range(i):
         print('* ', end="")
     print('')
