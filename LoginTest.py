@@ -1,3 +1,5 @@
+# Assessment 2 - Part 1
+
 
 from selenium import webdriver
 import time
