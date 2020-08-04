@@ -6,7 +6,7 @@ import time
 
 class LoginTest():
 
-    def setUpDriver(self):
+    def set_up_driver(self):
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(10)
         self.driver.maximize_window()
@@ -24,6 +24,6 @@ class LoginTest():
         self.driver.quit()
 
 login1 = LoginTest()
-login1.setUpDriver()
+login1.set_up_driver()
 login1.login_validation()
 login1.close_browser()
