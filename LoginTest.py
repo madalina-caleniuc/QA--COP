@@ -19,10 +19,12 @@ class LoginTest():
         time.sleep(10)
         self.driver.find_element_by_link_text("Welcome Admin").click()
         self.driver.find_element_by_link_text("Logout").click()
+        
     def close_browser(self):
         self.driver.close()
         self.driver.quit()
 
+        
 login1 = LoginTest()
 login1.set_up_driver()
 login1.login_validation()
