@@ -1,31 +1,35 @@
 # Assessment 2 - Part 1
 
-
+import unittest
 from selenium import webdriver
-import time
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
-class LoginTest():
 
-    def set_up_driver(self):
-        self.driver = webdriver.Firefox()
-        self.driver.implicitly_wait(10)
+class FirstAss(unittest.TestCase):
+
+    def setUp(self):
+        self.driver = webdriver.Chrome("/Users/madalina.caleniuc/Desktop/chromedriver_2")
+        self.driver.get("https://www.google.com/search?")
         self.driver.maximize_window()
-        self.driver.get("https://opensource-demo.orangehrmlive.com/")
+        self.wait = WebDriverWait(self.driver, 30)
 
-    def login_validation(self):
-        self.driver.find_element_by_id("txtUsername").send_keys("Admin")
-        self.driver.find_element_by_id("txtPassword").send_keys("admin123")
-        self.driver.find_element_by_id("btnLogin").click()
-        time.sleep(10)
-        self.driver.find_element_by_link_text("Welcome Admin").click()
-        self.driver.find_element_by_link_text("Logout").click()
-        
-    def close_browser(self):
+    def test_search(self):
+        input_elem = self.driver.find_element_by_name("q")
+        input_elem.send_keys("selenium python")
+        input_elem.send_keys(Keys.RETURN)
+        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".r>a")))
+        result = self.driver.find_element_by_css_selector(".r>a")
+        link = result.get_attribute("href")
+        assert link == "https://selenium-python.readthedocs.io/"
+        result.click()
+        assert self.driver.current_url == link
+
+    def tearDown(self):
         self.driver.close()
         self.driver.quit()
 
-        
-login1 = LoginTest()
-login1.set_up_driver()
-login1.login_validation()
-login1.close_browser()
+if __name__ == "__main__":
+    unittest.main()
