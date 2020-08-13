@@ -15,24 +15,29 @@ number = random.randint(1,9)
 guess = int(input("Enter a number : "))
 
 while guess != number:
-    guess = int(input("Try again : "))
+    try:
+        guess = int(input("Try again : "))
+    except ValueError:
+        print("It must be a number")
 
 else:
     print("Well guessed !! " )
 
-
 #ex 3 - print messages on the screen as long as a condition is met.
-print('Ex 3')
+print("Ex 3")
 
-value = input("Please enter 'exit' or 'continue' : ")
+value = input("Please enter '1'- Continue program or '2'-Exit : ")
+num = 50
 
-while value == "continue":
-    message = input("Enter a message:")
-    print(message)
-if not value:
-    print(input("Please chose one option -> enter 'exit' or 'continue' : "))
-if value == "exit":
-    print(input("Enter a message:"))
+if value == "1":
+    newnum = int(input("Enter a number:"))
+    while newnum < num:
+        print(newnum)
+        newnum += 1
+if value == "2":
+    print(("Exit"))
+else:
+    print("Please run again and enter '1'- exit' or '2'- continue :")
 
 
 
